@@ -5,6 +5,7 @@ const unitLoad = document.querySelector('#unit-load');
 const grade = document.querySelector('#grade');
 const table = document.querySelector('#table');
 const tbody = document.querySelector('#tbody');
+const error = document.querySelector('.error')
 let gpArry = [];
 
 const calcGp = document.querySelector('#calc-gp');
@@ -12,7 +13,15 @@ const Clear = document.querySelector('#clear');
 
 add.addEventListener('click', () => {
     if (courseCode.value === '' || unitLoad.value === '0' || grade.selectedIndex === '0') {
-        alert('No, or incomplete Input given')
+        error.innerHTML = '<p class="error-text">Please fill in all fields</p>'
+        setTimeout(function(){
+            error.innerHTML = ''
+        },2000)
+    } else if(!Number(unitLoad.value)){
+        error.innerHTML = '<p class="error-text">Unit-load can only be Numbers from 1 to 16</p>'
+        setTimeout(function(){
+            error.innerHTML = ''
+        },2000)
     } else {
         const tr = document.createElement('tr');
     const tdCourseCode = document.createElement('td');  

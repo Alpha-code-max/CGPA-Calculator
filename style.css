@@ -25,3 +25,11 @@ tbody td{
     font-size: small;
     margin-bottom: 40px;
 }
+.error-text{
+    width: 100%;
+    background-color: crimson;
+    border: 1px solid red;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
